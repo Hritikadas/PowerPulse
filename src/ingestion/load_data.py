@@ -16,10 +16,6 @@ RAW_IEX = Path("data/raw/iex")
 RAW_HPX = Path("data/raw/hpx")
 OUTPUT   = Path("data/processed/master.csv")
 
-
-# IEX exports have 4 banner rows (logo, title, date range) before the real header row.
-IEX_HEADER_ROW = 0  
-
 # Maps the exact column names in the raw IEX export to our internal schema.
 IEX_COLUMN_MAP = {
     "Date": "date",
@@ -48,9 +44,9 @@ def load_iex() -> pd.DataFrame:
     frames = []
     for f in files:
         if f.suffix == ".xlsx":
-            df = pd.read_excel(f, skiprows=IEX_HEADER_ROW)
+            df = pd.read_excel(f, skiprows=0)
         else:
-            df = pd.read_csv(f, skiprows=IEX_HEADER_ROW)
+            df = pd.read_csv(f, skiprows=0)
 
         # Drop any fully-empty trailing rows/columns the export sometimes adds
         df = df.dropna(how="all")

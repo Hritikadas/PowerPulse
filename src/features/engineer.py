@@ -91,13 +91,18 @@ def main():
     print(f"Feature dataset saved -> {OUTPUT}  (shape: {df.shape})")
 
 
+# if __name__ == "__main__":
+#     df = pd.read_csv("data/processed/master.csv")
+    
+#     # Clean the data using our new function first!
+#     df = clean_missing_data(df)
+    
+#     df = add_time_features(df)
+#     df = add_lag_features(df)
+#     df.to_csv(OUTPUT, index=False)
+#     main()
+# DELETE the if __name__ == "__main__" block that's there now
+# Replace with just this:
+
 if __name__ == "__main__":
-    df = pd.read_csv("data/processed/master.csv")
-    
-    # Clean the data using our new function first!
-    df = clean_missing_data(df)
-    
-    df = add_time_features(df)
-    df = add_lag_features(df)
-    df.to_csv(OUTPUT, index=False)
     main()
