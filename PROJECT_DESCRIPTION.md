@@ -322,7 +322,7 @@ streamlit run src/dashboard/app.py
 
 ## 📞 Project Contact & Support
 
-**Developer**: Hritika Das  
+**Developer**: Hritika Das & Pari Kulkarni  
 **Project Name**: PowerPulse - Electricity Market Intelligence Dashboard  
 **Project Type**: Internship Project - Data Science & Machine Learning  
 **Duration**: January 2026 - July 2026  
